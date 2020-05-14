@@ -4,4 +4,5 @@ class DockerFile
     @multiline_command = false
     @file = File.open(file_path)
   end
+
 end
