@@ -10,7 +10,7 @@
 /test/version_tmp/
 /tmp/
 .idea
-lib/Dockerfile
+Dockerfile
 
 # Used by dotenv library to load environment variables.
 # .env
