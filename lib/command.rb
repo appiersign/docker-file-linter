@@ -1,17 +1,12 @@
 class Command
+  private_constant VALID_COMMANDS = %w[ADD COPY ENV EXPOSE FROM LABEL STOPSIGNAL USER VOLUME WORKDIR ONBUILD ARG CMD RUN ENTRYPOINT HEALTHCHECK SHELL].freeze
+  private_constant DEPRECATED_COMMANDS = %w[MAINTAINER].freeze
+
   def deprecated?(command)
-    deprecated_commands.any? { |c| c == command }
+    DEPRECATED_COMMANDS.any? { |c| c == command }
   end
 
   def valid?(command)
-    all.any? { |c| c == command }
-  end
-
-  def deprecated_commands
-    %w[MAINTAINER]
-  end
-
-  def all
-    %w[ADD COPY ENV EXPOSE FROM LABEL STOPSIGNAL USER VOLUME WORKDIR ONBUILD ARG CMD RUN ENTRYPOINT HEALTHCHECK SHELL]
+    VALID_COMMANDS.any? { |c| c == command }
   end
 end
