@@ -12,6 +12,20 @@ class DockerFile
     lines
   end
 
+  def lines_count
+    @lines.length
+  end
+
+  def dump(command = '')
+    return @lines if command.empty?
+
+    all = ''
+    @lines.each { |line| all += line + "\n" if line.split(/ /)[0] == command }
+    all
+  end
+
+  private
+
   def lines
     @file.readlines.each do |line|
       current_line = line.gsub("\n", '')
@@ -28,18 +42,6 @@ class DockerFile
 
       @lines << current_line
     end
-  end
-
-  def lines_count
-    @lines.length
-  end
-
-  def dump(command = '')
-    return @lines if command.empty?
-
-    all = ''
-    @lines.each { |line| all += line + "\n" if line.split(/ /)[0] == command }
-    all
   end
 
   def command(line)
