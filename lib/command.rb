@@ -1,5 +1,5 @@
 class Command
-  private_constant VALID_COMMANDS = %w[
+  VALID_COMMANDS = %w[
     ADD
     COPY
     ENV
@@ -18,7 +18,10 @@ class Command
     HEALTHCHECK
     SHELL
   ].freeze
-  private_constant DEPRECATED_COMMANDS = %w[MAINTAINER].freeze
+  DEPRECATED_COMMANDS = %w[MAINTAINER].freeze
+
+  private_constant :VALID_COMMANDS
+  private_constant :DEPRECATED_COMMANDS
 
   def deprecated?(command)
     DEPRECATED_COMMANDS.any? { |c| c == command }
