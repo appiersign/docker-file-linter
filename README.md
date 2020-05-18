@@ -59,6 +59,13 @@ To dump a specific docker command or reference
 p(docker_file.dump(command))
 ```
 
+To test with the main.rb file in the terminal
+
+```
+cd bin
+ruby main.rb
+```
+
 ## Authors
 
 👤 **Solomon Appier-Sign**
