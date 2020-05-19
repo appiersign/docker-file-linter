@@ -2,18 +2,16 @@ require_relative('./command')
 
 class DockerFile
   attr_reader :deprecated
+  attr_reader :lines_count
 
   def initialize(file_path)
     @command = Command.new
     @lines = []
+    @lines_count = 0
     @deprecated = []
     @multiline_command = false
     @file = File.open(file_path)
     lines
-  end
-
-  def lines_count
-    @lines.length
   end
 
   def dump(command = '')
