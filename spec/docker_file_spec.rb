@@ -1,7 +1,7 @@
 require_relative('../lib/docker_file')
 
 describe DockerFile do
-  let(:docker_file) { DockerFile.new('Dockerfile') }
+  let(:docker_file) { DockerFile.new('docs/Dockerfile') }
   describe '#lines_count' do
     it 'should return the total number of lines in the docker file' do
       expect(docker_file.lines_count).to(eql(23))
