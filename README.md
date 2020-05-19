@@ -66,6 +66,12 @@ cd bin
 ruby main.rb
 ```
 
+To test the main.rb with a 'bad' Dockerfile you have to update the path passed to the Dockerfile instance
+```
+d = DockerFile.new('../docs/Dockerfile_bad')
+ruby main.rb
+```
+
 ## Authors
 
 👤 **Solomon Appier-Sign**
